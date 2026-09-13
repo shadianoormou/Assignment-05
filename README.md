@@ -4,8 +4,8 @@ DevStack is a focused technology library that helps developers compare modern to
 
 ## Live links
 
-- Repository: `https://github.com/shadianoormou/Assignment-05`
-- Live site: `https://b14-a05-devstack-puce.vercel.app`
+- Repository: https://github.com/shadianoormou/Assignment-05
+- Live site: https://b14-a05-devstack-puce.vercel.app
 
 ## Built with
 
