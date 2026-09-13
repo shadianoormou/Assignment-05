@@ -86,12 +86,19 @@ function TechCard({ technology, selected, onAdd }) {
 }
 
 function StackPanel({ stack, onRemove, onRemoveAll }) {
+  const coreCategories = ['Frontend', 'Backend', 'Database'];
+  const missingCategories = coreCategories.filter((category) => !stack.some((item) => item.category === category));
+  const stackHealth = stack.length === 0
+    ? 'Start with a frontend tool, then add the services your idea needs.'
+    : missingCategories.length === 0
+      ? 'Balanced foundation: your stack covers the three core layers.'
+      : `You are ${missingCategories.length} core layer${missingCategories.length > 1 ? 's' : ''} away from a balanced foundation.`;
   return (
     <aside className="stack-panel" aria-label="Your selected technology stack">
       <div className="stack-heading"><div><h2>Your stack</h2><p>{stack.length === 0 ? 'No technologies selected yet.' : `${stack.length} ${stack.length === 1 ? 'technology' : 'technologies'} selected`}</p></div><span className="stack-count">{String(stack.length).padStart(2, '0')}</span></div>
       {stack.length === 0 ? <div className="empty-stack"><div className="empty-icon"><Plus size={19} /></div><p>Your stack is empty.</p><span>Add tools from the library to start shaping your next build.</span></div> : <div className="stack-items">{stack.map((item) => <div className="stack-item" key={item.id}><TechnologyIcon technology={item} /><div><strong>{item.name}</strong><small>{item.category}</small></div><button className="remove-item" aria-label={`Remove ${item.name}`} onClick={() => onRemove(item)}><X size={16} /></button></div>)}</div>}
       <button className="remove-all" onClick={onRemoveAll} disabled={stack.length === 0}><Trash2 size={15} /> Remove all</button>
-      <div className="stack-tip"><Sparkles size={15} /><span>Tip: combine a frontend, backend, and database tool for a balanced starting point.</span></div>
+      <div className="stack-tip" aria-live="polite"><Sparkles size={15} /><span>{stackHealth}</span></div>
     </aside>
   );
 }
