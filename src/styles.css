@@ -870,6 +870,7 @@ button{
     position: sticky;
   }
   .nav {
+    position: relative;
     height: 67px;
     gap: 12px;
     justify-content: space-between;
@@ -886,7 +887,10 @@ button{
     display: none;
   }
   .nav .brand {
-    margin-right: auto;
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
   }
   .nav-links {
     position: absolute;
