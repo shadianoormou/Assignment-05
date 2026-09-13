@@ -4,7 +4,7 @@ DevStack is a focused technology library that helps developers compare modern to
 
 ## Live links
 
-- Repository: `https://github.com/ProgrammingHero1/B14-A05-DevStack`
+- Repository: `https://github.com/shadianoormou/Assignment-05`
 - Live site: _Pending Vercel authentication in the deployment environment._
 
 ## Built with
