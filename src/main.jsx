@@ -4,6 +4,7 @@ import { Menu, X, ArrowRight, Star, Check, Plus, Trash2, Search, Sparkles } from
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles.css';
+import heroArtwork from '../assets/banner-stack.png';
 
 const categories = ['All', 'Frontend', 'Backend', 'Database', 'Language', 'Styling', 'DevOps', 'Tools'];
 
@@ -60,7 +61,7 @@ function Hero() {
       </div>
       <div className="hero-art-wrap">
         <div className="art-glow" />
-        <img className="hero-art" src="/assets/banner-stack.png" alt="A colorful layered illustration representing a technology stack" />
+        <img className="hero-art" src={heroArtwork} alt="A colorful layered illustration representing a technology stack" />
         <div className="floating-note note-top"><Sparkles size={14} /> Build with intention</div>
         <div className="floating-note note-bottom"><span className="mini-status" /> 12 tools, one clear plan</div>
       </div>
