@@ -35,31 +35,31 @@ Create a production build with `npm run build` and preview it with `npm run prev
 
 ### What is JSX, and why is it used in React?
 
-JSX is a JavaScript syntax that lets us describe UI with HTML-like elements. It keeps the component structure close to the UI it creates, which makes React code easier to read.
+JSX is a JavaScript syntax. We can describe UI with HTML-like elements by using it. It keeps the component structure close to the UI it creates which makes React code easier to read.
 
 ### What is the difference between props and state?
 
-Props are read-only values passed into a component by its parent. State is data owned by the component that can change and cause the UI to update.
+Props are read-only values passed into a component by its parent. On the other hand State is data owned by the component that can change and cause the UI to update.
 
 ### What does the `useState` hook do, and where did you use it in this project?
 
-`useState` stores changing component data. DevStack uses it for the technology list, loading state, mobile menu, search/filter values, and the selected stack.
+The useState hook is used to store data that can change over time. In my DevStack project, I used it for the technology list, loading state, mobile menu, search and filter values, and the selected stack.
 
 ### What does the `useEffect` hook do, and why did you need it to load the JSON data?
 
-`useEffect` runs side effects after rendering. It loads `technologies.json` once when the app starts, then updates the UI when the response arrives.
+The useEffect hook lets React run side effects after a component renders. I used it to fetch technologies.json once when the app loads. When the data arrives, it updates the state, so the technology cards appear in the UI.
 
 ### Why does every item in a `.map()` list need a unique `key` prop?
 
-A key gives React a stable identity for each list item. React can then update only the items that changed instead of rebuilding the entire list.
+Each item in a .map() list needs a unique key so React can identify it between renders. This helps React update only the items that changed instead of rebuilding the whole list.
 
 ### What is conditional rendering? Show one place you used it.
 
-Conditional rendering means showing different UI based on a condition. The stack panel shows an empty message when `stack.length === 0`; otherwise it renders the selected technology items.
+Conditional rendering means displaying different UI depending on a condition. In my project, the stack panel shows an empty message when `stack.length === 0`; otherwise, it displays the selected technology items.
 
 ### How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
-The parent passes data through props, such as `technology` and `selected` into `TechCard`. It can pass a callback too, so the child calls `onAdd(technology)` to send the user action back to the parent.
+A parent component passes data to a child through props. In my project, Technologies passes technology and selected to TechCard. The parent also passes the onAdd callback, which the child calls with onAdd(technology) when the user clicks the add button.
 
 ## Meaningful commit history
 
